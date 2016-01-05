@@ -33,4 +33,4 @@ ENV MONGO_URL=mongodb://10.33.0.33:27017/rocketchat \
     Accounts_AvatarStorePath=/app/uploads
 
 EXPOSE 3000
-CMD ["nodejs", "main.js"]
+CMD ["node", "main.js"]
