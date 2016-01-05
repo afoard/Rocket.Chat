@@ -31,7 +31,7 @@ WORKDIR /app/bundle
 # needs a mongoinstance - defaults to container linking with alias 'mongo'
 ENV MONGO_URL=mongodb://10.33.0.33:27017/rocketchat \
     PORT=3000 \
-    ROOT_URL=http://localhost:3000 \
+    ROOT_URL=http://chat.afoard.xyz:3000 \
     Accounts_AvatarStorePath=/app/uploads
 
 EXPOSE 3000
