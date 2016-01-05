@@ -2,8 +2,10 @@ FROM phusion/baseimage:0.9.15
 MAINTAINER afoard <afoard3@gmail.com>
 
 RUN apt-get update \
-&&  apt-get install -y graphicsmagick nodejs npm \
-#&&  apt-get install -y npm  \
+&&  apt-get install -y graphicsmagick npm \
+##&&  apt-get install -y npm  \
+&& npm install -g n
+&& n stable
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r rocketchat \
