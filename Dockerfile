@@ -1,6 +1,5 @@
-FROM node:0.10
-
-MAINTAINER buildmaster@rocket.chat
+FROM phusion/baseimage:0.9.15 
+MAINTAINER afoard <afoard3@gmail.com>
 
 RUN apt-get update \
 &&  apt-get install -y graphicsmagick \
