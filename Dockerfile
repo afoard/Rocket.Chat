@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.9.15
 MAINTAINER afoard <afoard3@gmail.com>
 
 RUN apt-get update \
-&&  apt-get install -y graphicsmagick npm \
+&&  apt-get install -y graphicsmagick npm nodejs-legacy \
 #&&  apt-get install -y npm  \
 &&  rm -rf /var/lib/apt/lists/*
 
