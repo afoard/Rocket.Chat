@@ -1,9 +1,10 @@
-FROM phusion/baseimage:0.9.15 
-MAINTAINER afoard <afoard3@gmail.com>
+
+FROM node:0.10
+
+MAINTAINER buildmaster@rocket.chat
 
 RUN apt-get update \
-&&  apt-get install -y graphicsmagick npm nodejs-legacy \
-#&&  apt-get install -y npm  \
+&&  apt-get install -y graphicsmagick \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r rocketchat \
@@ -15,12 +16,12 @@ RUN groupadd -r rocketchat \
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104
 
 WORKDIR /app
+
 RUN curl -fSL "https://s3.amazonaws.com/rocketchatbuild/rocket.chat-develop.tgz" -o rocket.chat.tgz \
-&& tar zxvf ./rocket.chat.tgz \
-&& rm ./rocket.chat.tgz  \
-&& cd /app/bundle/programs/server \
-&& npm install -g n
-&& n 0.10.40
+&&  tar zxvf ./rocket.chat.tgz \
+&&  rm ./rocket.chat.tgz  \
+&&  cd /app/bundle/programs/server \
+&&  npm install
 
 USER rocketchat
 
