@@ -19,7 +19,7 @@ RUN curl -fSL "https://s3.amazonaws.com/rocketchatbuild/rocket.chat-develop.tgz"
 && tar zxvf ./rocket.chat.tgz \
 && rm ./rocket.chat.tgz  \
 && cd /app/bundle/programs/server \
-#&& npm install
+&& npm install
 
 USER rocketchat
 
