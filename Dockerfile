@@ -2,8 +2,8 @@ FROM phusion/baseimage:0.9.15
 MAINTAINER afoard <afoard3@gmail.com>
 
 RUN apt-get update \
-&&  apt-get install -y graphicsmagick npm \
-#&&  apt-get install -y npm \
+&&  apt-get install -y graphicsmagick nodejs npm \
+#&&  apt-get install -y npm  \
 &&  rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r rocketchat \
@@ -19,12 +19,9 @@ RUN curl -fSL "https://s3.amazonaws.com/rocketchatbuild/rocket.chat-develop.tgz"
 && tar zxvf ./rocket.chat.tgz \
 && rm ./rocket.chat.tgz  \
 && cd /app/bundle/programs/server \
-&& npm install
-#&& n 0.10.40
+#&& npm install
 
 USER rocketchat
-#RUN npm install -g n
-#&&  n 0.10.40
 
 VOLUME /app/uploads
 WORKDIR /app/bundle
